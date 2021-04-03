@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const rotaprodutos = require('./routes/produtos');
 const rotapedidos = require('./routes/pedidos');
 
+//body-parser não é mais utilizado para url-encoder(...) ou para .json()
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false })); //dados simples
 app.use(express.json());
