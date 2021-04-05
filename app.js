@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 const rotaprodutos = require('./routes/produtos');
 const rotapedidos = require('./routes/pedidos');
