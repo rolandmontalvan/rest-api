@@ -10,6 +10,22 @@ const rotapedidos = require('./routes/pedidos');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false })); //dados simples
 app.use(express.json());
+
+//configurando permissões do CORS,
+//CUIDADO!!!  
+app.use((req,res,next)=>{
+    //configurando a permissão de origem do controle de acesso,
+    //deixando liberado para todos CUIDADO!!!  
+    res.header('Access-Control-Allow-Origin','*');
+    //configurando a permissão do controle de acesso do cabeçario
+    res.header('Access-Control-Allow-Header','Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if (req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+        return res.status(200).send({});
+    }
+    next();
+})
+
 app.use('/produtos', rotaprodutos);
 app.use('/pedidos', rotapedidos);
 
