@@ -11,11 +11,10 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false })); //dados simples
 app.use(express.json());
 
-//configurando permissões do CORS,
-//CUIDADO!!!  
+//configurando permissões do CORS, CUIDADO!!!  
 app.use((req,res,next)=>{
-    //configurando a permissão de origem do controle de acesso,
-    //deixando liberado para todos CUIDADO!!!  
+    //permissão de origem do controle de acesso,
+    //* = liberado para todos 
     res.header('Access-Control-Allow-Origin','*');
     //configurando a permissão do controle de acesso do cabeçario
     res.header('Access-Control-Allow-Header','Origin, X-Requested-With, Content-Type, Accept, Authorization');
