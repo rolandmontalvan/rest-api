@@ -16,7 +16,7 @@ app.use((req,res,next)=>{
     //permissão de origem do controle de acesso,
     //* = liberado para todos 
     res.header('Access-Control-Allow-Origin','*');
-    //configurando a permissão do controle de acesso do cabeçario
+    //configurando a permissão do controle de acesso do cabeçalho
     res.header('Access-Control-Allow-Header','Origin, X-Requested-With, Content-Type, Accept, Authorization');
     if (req.method === 'OPTIONS'){
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
