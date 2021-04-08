@@ -23,6 +23,7 @@ app.use((req,res,next)=>{
         return res.status(200).send({});
     }
     next();
+    //utilizando pluggin remote containers
 })
 
 app.use('/produtos', rotaprodutos);
