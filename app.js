@@ -9,6 +9,8 @@ const rotapedidos = require('./routes/pedidos');
 //body-parser não é mais utilizado para url-encoder(...) ou para .json()
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false })); //dados simples
+
+//usando express para receber JSON
 app.use(express.json());
 
 //configurando permissões do CORS, CUIDADO!!!  
