@@ -33,7 +33,7 @@ app.use('/pedidos', rotapedidos);
 
 // tratamento para quando a rota não for encontrada
 app.use((req, res, next) => {
-    const erro = new Error('Requisição não encontrada, resolicitar');
+    const erro = new Error('Requisição não encontrada.');
     erro.status = 404;
     next(erro);
 });
